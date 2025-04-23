@@ -1,0 +1,232 @@
+/* General styling */
+body {
+    background-color: #f4f6f9; /* Light gray background */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px; /* Base font size */
+}
+
+/* Title Card */
+.title-card {
+    background-image: url('https://images.pexels.com/photos/1600757/pexels-photo-1600757.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    background-blend-mode: overlay; /* Blend overlay with image */
+    color: #ffffff;
+    height: 250px; /* Larger height */
+    width: 100%; /* Full width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0px;
+}
+
+.title-card h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* Main Layout */
+.main-layout {
+    min-height: calc(100vh - 250px); /* Adjust for new title height */
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    background-color: #385e86; /* Requested sidebar color */
+    min-height: 100%;
+}
+
+/* Right Content */
+.content {
+    padding: 20px;
+}
+
+/* Summary Card */
+.summary-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h2 {
+    font-size: 1.8rem; /* Medium heading */
+}
+
+/* Smaller Table */
+.small-table {
+    font-size: 0.9rem; /* Smaller font */
+}
+
+.small-table th,
+.small-table td {
+    padding: 8px; /* Reduced padding */
+    text-align: center;
+}
+
+.small-table thead th {
+    background-color: #343a40; /* Dark gray header */
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Chart Card */
+.chart-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card h2 {
+    font-size: 1.8rem;
+}
+
+.chart-container {
+    display: flex;
+}
+
+.chart-sidebar {
+    background-color: #5587BC; /* Requested nav color */
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.chart-sidebar h5 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.chart-sidebar .nav-link {
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.chart-sidebar .nav-link:hover {
+    background-color: #003087; /* Requested active color */
+}
+
+.chart-sidebar .nav-link.active {
+    background-color: #003087; /* Requested active color */
+    font-weight: bold;
+}
+
+.chart-content {
+    flex-grow: 1;
+    position: relative;
+}
+
+/* Status Container */
+.status-container {
+    position: absolute;
+    top: -50px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Status Text */
+.status-text {
+    font-size: 1.2rem; /* Enlarged from 0.9rem */
+    margin-right: 8px; /* Adjusted spacing */
+}
+
+/* Status Icon */
+.status-icon {
+    width: 30px; /* Enlarged from 20px */
+    height: 30px; /* Enlarged from 20px */
+    border-radius: 50%;
+    background-color: #28a745; /* Green by default */
+}
+
+/* Form */
+.form-group label {
+    font-size: 0.9rem;
+}
+
+.form-control {
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Chart */
+#speedChart {
+    max-height: 400px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#currentDate {
+    font-size: 1rem;
+}
+
+/* DateTimePicker Styles */
+.datetimepicker {
+    cursor: pointer;
+}
+
+.xdsoft_datetimepicker {
+    font-family: "Times New Roman", Times, serif !important;
+    z-index: 1050 !important; /* Ensure above Bootstrap elements */
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td,
+.xdsoft_datetimepicker .xdsoft_calendar th,
+.xdsoft_datetimepicker .xdsoft_time_box .xdsoft_time {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 0.9rem;
+}
+
+.xdsoft_datetimepicker .xdsoft_label {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 0.9rem;
+}
+
+.xdsoft_datetimepicker .xdsoft_save_selected {
+    background-color: #007bff !important; /* Match Bootstrap primary button */
+    border-color: #007bff !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_save_selected:hover {
+    background-color: #0056b3 !important;
+    border-color: #004085 !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .left-sidebar {
+        display: none; /* Hide sidebar on small screens */
+    }
+    .content {
+        padding: 10px;
+    }
+    .chart-container {
+        flex-direction: column;
+    }
+    .chart-sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .status-container {
+        position: static;
+        margin: 10px 0;
+    }
+}
