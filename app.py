@@ -144,7 +144,7 @@ def get_speed(car_plate):
 
 if __name__ == "__main__":
     try:
-        app.run(debug=True, port=8888)
+        app.run(host='0.0.0.0', debug=True, port=8888)
     finally:
         spark.stop()
 
