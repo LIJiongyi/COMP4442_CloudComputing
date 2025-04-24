@@ -18,7 +18,14 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 
 # 初始化Spark
-spark = SparkSession.builder.appName("SpeedMonitor").getOrCreate()
+spark = SparkSession.builder \
+    .appName("SpeedMonitor") \
+    .master("local[*]") \
+    .config("spark.driver.memory", "1g") \
+    .config("spark.driver.bindAddress", "127.0.0.1") \
+    .config("spark.executor.memory", "1g") \
+    .config("spark.driver.host", "127.0.0.1") \
+    .getOrCreate()
 
 # 定义schema
 schema = StructType([StructField(col, StringType(), True) for col in [
