@@ -47,7 +47,9 @@ default_end_time = time_range["max_time"].strftime("%Y-%m-%d %H:%M:%S")
 print(f"Dataset time range - Start: {default_start_time}, End: {default_end_time}")
 
 # 缓存速度数据
-speed_data = df.select("carPlateNumber", "Speed", "isOverspeed", "Time").orderBy("Time").collect()
+# 加载速度数据 - 添加限制避免内存溢出
+df_speed = df.select("carPlateNumber", "Speed", "isOverspeed", "Time").orderBy("Time")
+speed_data = df_speed.limit(10000).collect()  # 限制记录数量
 car_plates = sorted(list(set(row["carPlateNumber"] for row in speed_data)))
 
 # 加载summary.json并按车牌号排序
